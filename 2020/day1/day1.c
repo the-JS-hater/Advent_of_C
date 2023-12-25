@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "C:\Users\morga\Advent_of_C\2020\myVec.h"
 
+#define MAX_LENGTH 10
+
+
 int partOne();
 int partTwo();
 

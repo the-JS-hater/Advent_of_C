@@ -1,7 +1,6 @@
 #include <stdlib.h>
 
 #define INITIAL_VECTOR_CAPACITY 10
-#define MAX_LENGTH 10
 
 typedef struct 
 {
