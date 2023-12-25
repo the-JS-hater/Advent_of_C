@@ -10,3 +10,6 @@ typedef struct {
     String_node* tail = head->next;
 } String_list;
 
+void insert(String_node){
+    
+};
