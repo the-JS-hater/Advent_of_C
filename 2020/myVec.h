@@ -16,7 +16,7 @@ Vector* newVector(){
     nVector -> size = 0;    
     nVector -> capacity = INITIAL_VECTOR_CAPACITY;
     return nVector;
-}  
+}
 
 
 void pushBack(Vector* vec, int value){

@@ -2,19 +2,19 @@
 
 #define MAX_LENGTH 50
 
-int partOne();
+int countTrees();
 int countOccurrences(char c, char *arr);
 int partTwo();
 
 int main(){
-    printf("%d", partOne());
+    printf("%d", countTrees());
     printf("\n");
     printf("%d", partTwo());
     return 0;
 }
 
 
-int partOne(){
+int countTrees(){
     FILE *file_ptr;
     file_ptr = fopen("day2_input.txt", "r");
     char line[MAX_LENGTH];

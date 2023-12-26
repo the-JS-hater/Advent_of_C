@@ -1,5 +1,7 @@
 #include <stdlib.h>
 
+//TODO - work in progress
+
 typedef struct {
     char* string;
     String_node* next;

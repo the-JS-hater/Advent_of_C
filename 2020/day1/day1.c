@@ -2,15 +2,14 @@
 #include "C:\Users\morga\Advent_of_C\2020\myVec.h"
 
 #define MAX_LENGTH 10
-#define NUMS ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
-int partOne();
+int countTrees();
 int partTwo();
 
 int main()
 {
-    printf("%d", partOne());
+    printf("%d", countTrees());
     printf("\n");
     printf("%d", partTwo());
 
@@ -18,7 +17,7 @@ int main()
 }
 
 
-int partOne(){
+int countTrees(){
     FILE *file_ptr;
 
     file_ptr = fopen("day1_input.txt", "r");
