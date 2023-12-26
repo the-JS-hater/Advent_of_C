@@ -3,12 +3,11 @@
 #define MAX_LENGTH 50
 
 int partOne();
-int countOccurances(char, char*);
+int countOccurrences(char c, char *arr);
 
 
 int main(){
-    partOne();
-    //printf("%d", partOne());
+    printf("%d", partOne());
     printf("\n");
     return 0;
 }
@@ -16,7 +15,7 @@ int main(){
 
 int partOne(){
     FILE *file_ptr;
-    file_ptr = fopen("day1_input.txt", "r");
+    file_ptr = fopen("day2_input.txt", "r");
     char line[MAX_LENGTH];
 
     int validPasswords = 0;
@@ -24,39 +23,32 @@ int partOne(){
     {
         int lowerBound = 0;
         int upperBound = 0;
+        char c;
+        int i = 0;
 
-        char c = line[0];
-        int i = 1;
-        while (c != "-"){
+
+        while (line[i] != '-') {
             lowerBound *= 10;
-            lowerBound += atoi(c);
-            c = line[i];
+            lowerBound += line[i] - '0';
             i++;
         }
-        i++;
-        while (c != " "){
+        i++; // Move past '-'
+
+        // Read upperBound
+        while (line[i] != ' ') {
             upperBound *= 10;
-            upperBound += atoi(c);
-            c = line[i];
+            upperBound += line[i] - '0';
             i++;
         }
+        i += 1; // Move past ' '
 
-        i++;
-        c = line[i];
-        i += 2;
+        c = line[i]; // Get the character to count
+        i += 3; // Move past the character and ':'
 
-        char* charsLeft[sizeof(line) - i];
-        for (i; i < sizeof(line); i++){
-            charsLeft[i] = line[i];
-        } 
+        // Count occurrences in the rest of the string
+        int occurrences = countOccurrences(c, &line[i]);
 
-        printf("%d \n", lowerBound);
-        printf("%d \n", upperBound);
-        printf(c);
-
-        int occurances = countOccurances(c, charsLeft);
-
-        if(occurances >= lowerBound && occurances <= upperBound){
+        if (occurrences >= lowerBound && occurrences <= upperBound) {
             validPasswords++;
         }
     }
@@ -64,10 +56,10 @@ int partOne(){
 }
 
 
-int countOccurances(char c, char* arr){
+int countOccurrences(char c, char *arr) {
     int sum = 0;
-    for (int i = 0; i < sizeof(arr); i++){
-        if(arr[i] == c){
+    for (int i = 0; arr[i] != '\0'; i++) {
+        if (arr[i] == c) {
             sum++;
         }
     }
