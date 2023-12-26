@@ -35,7 +35,6 @@ int countTrees(){
         }
         i++; // Move past '-'
 
-        // Read upperBound
         while (line[i] != ' ') {
             upperBound *= 10;
             upperBound += line[i] - '0';
